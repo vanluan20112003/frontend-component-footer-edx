@@ -1,0 +1,1254 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer /> renders correctly renders with a language selector 1`] = `
+<footer
+  aria-label="edX Home"
+  className="footer d-flex justify-content-center border-top py-3 px-4"
+  role="contentinfo"
+>
+  <div
+    className="container-fluid d-grid"
+  >
+    <div
+      className="area-1"
+    >
+      <a
+        aria-label="edX Home"
+        href="https://edx.org"
+      >
+        <img
+          alt="edX Logo"
+          src="https://edx-cdn.org/v3/prod/logo-trademark.svg"
+          style={
+            {
+              "maxHeight": 45,
+            }
+          }
+        />
+      </a>
+      <div
+        className="i18n d-flex mt-4"
+      >
+        <form
+          className="d-flex align-items-center"
+          onSubmit={[Function]}
+        >
+          <label
+            className="m-0"
+            htmlFor="site-footer-language-select"
+          >
+            <svg
+              aria-hidden="true"
+              className="svg-inline--fa fa-language fa-2x text-primary"
+              data-icon="language"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              style={{}}
+              viewBox="0 0 640 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 128C0 92.7 28.7 64 64 64l192 0 48 0 16 0 256 0c35.3 0 64 28.7 64 64l0 256c0 35.3-28.7 64-64 64l-256 0-16 0-48 0L64 448c-35.3 0-64-28.7-64-64L0 128zm320 0l0 256 256 0 0-256-256 0zM178.3 175.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1 .1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1 73.6 0 8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4l-64-144zM160 233.2L179 276l-38 0 19-42.8zM448 164c11 0 20 9 20 20l0 4 44 0 16 0c11 0 20 9 20 20s-9 20-20 20l-2 0-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4c.9 .6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.9 27.4s-18 12.5-27.4 6.9l-18.9-11.3c-4.5-2.7-8.8-5.5-13.1-8.5c-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8l-12.2-12.2c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6 .5 .5c12.4-13.1 22.5-28.3 29.8-45L448 228l-72 0c-11 0-20-9-20-20s9-20 20-20l52 0 0-4c0-11 9-20 20-20z"
+                fill="currentColor"
+                style={{}}
+              />
+            </svg>
+            <div
+              className="sr-only"
+            >
+              Choose Language
+            </div>
+          </label>
+          <select
+            className="mx-2"
+            defaultValue="en"
+            id="site-footer-language-select"
+            name="site-footer-language-select"
+          >
+            <option
+              value="en"
+            >
+              English
+            </option>
+            <option
+              value="es"
+            >
+              Español
+            </option>
+          </select>
+          <button
+            className="btn btn-outline-primary btn-sm"
+            data-testid="site-footer-submit-btn"
+            type="submit"
+          >
+            Apply
+          </button>
+        </form>
+      </div>
+    </div>
+    <div
+      className="area-2"
+    >
+      <h2>
+        edX
+      </h2>
+      <ul
+        className="list-unstyled p-0 m-0"
+      >
+        <li>
+          <a
+            href="https://edx.org/about-us"
+          >
+            About
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://edx.org/affiliate-program"
+          >
+            Affiliates
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://business.edx.org/?utm_campaign=edX.org+Referral&utm_medium=Footer&utm_source=localhost"
+          >
+            edX for Business
+          </a>
+        </li>
+        <li>
+          <a
+            href="http://open.edx.org"
+          >
+            Open edX
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://edx.org/careers"
+          >
+            Careers
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://edx.org/news-announcements"
+          >
+            News
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div
+      className="area-3"
+    >
+      <h2>
+        Legal
+      </h2>
+      <ul
+        className="list-unstyled p-0 m-0"
+      >
+        <li>
+          <a
+            href="https://edx.org/edx-terms-service"
+          >
+            Terms of Service & Honor Code
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://edx.org/edx-privacy-policy"
+          >
+            Privacy Policy
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://edx.org/accessibility"
+          >
+            Accessibility Policy
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://edx.org/trademarks"
+          >
+            Trademark Policy
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://edx.org/sitemap"
+          >
+            Sitemap
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://edx.org/edx-privacy-policy/cookies"
+          >
+            Cookie Policy
+          </a>
+        </li>
+        <li>
+          <button
+            className="px-0 text-left text-decoration-none btn btn-link btn-inline"
+            disabled={false}
+            id="footer-dns-link"
+            onClick={[Function]}
+            type="button"
+          >
+            Your Privacy Choices
+          </button>
+        </li>
+      </ul>
+    </div>
+    <div
+      className="area-4"
+    >
+      <h2>
+        Connect
+      </h2>
+      <ul
+        className="list-unstyled p-0 m-0"
+      >
+        <li>
+          <a
+            href="https://www.edx.org/resources"
+          >
+            Idea Hub
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://courses.edx.org/support/contact_us"
+          >
+            Contact Us
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://support.edx.org"
+          >
+            Help Center
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://edx.org/policy/security"
+          >
+            Security
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://edx.org/media-kit"
+          >
+            Media Kit
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div
+      className="area-5"
+    >
+      <ul
+        className="d-flex flex-row justify-content-between list-unstyled max-width-222 p-0 mb-4"
+      >
+        <li>
+          <a
+            href="http://www.facebook.com/EdxOnline"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+            title="Facebook"
+          >
+            <svg
+              aria-hidden="true"
+              className="svg-inline--fa fa-square-facebook fa-2x social-icon"
+              data-icon="square-facebook"
+              data-prefix="fab"
+              focusable="false"
+              role="img"
+              style={{}}
+              viewBox="0 0 448 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64h98.2V334.2H109.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H255V480H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64z"
+                fill="currentColor"
+                style={{}}
+              />
+            </svg>
+            <span
+              className="sr-only"
+            >
+              Like edX on Facebook
+            </span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://twitter.com/edXOnline"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+            title="X (formerly Twitter)"
+          >
+            <svg
+              aria-hidden="true"
+              className="svg-inline--fa fa-square-x-twitter fa-2x social-icon"
+              data-icon="square-x-twitter"
+              data-prefix="fab"
+              focusable="false"
+              role="img"
+              style={{}}
+              viewBox="0 0 448 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm297.1 84L257.3 234.6 379.4 396H283.8L209 298.1 123.3 396H75.8l111-126.9L69.7 116h98l67.7 89.5L313.6 116h47.5zM323.3 367.6L153.4 142.9H125.1L296.9 367.6h26.3z"
+                fill="currentColor"
+                style={{}}
+              />
+            </svg>
+            <span
+              className="sr-only"
+            >
+              Follow edX on X (formerly Twitter)
+            </span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="http://www.linkedin.com/company/edx"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+            title="LinkedIn"
+          >
+            <svg
+              aria-hidden="true"
+              className="svg-inline--fa fa-linkedin fa-2x social-icon"
+              data-icon="linkedin"
+              data-prefix="fab"
+              focusable="false"
+              role="img"
+              style={{}}
+              viewBox="0 0 448 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
+                fill="currentColor"
+                style={{}}
+              />
+            </svg>
+            <span
+              className="sr-only"
+            >
+              Follow edX on LinkedIn
+            </span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.instagram.com/edxonline/"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+            title="Instagram"
+          >
+            <svg
+              aria-hidden="true"
+              className="svg-inline--fa fa-instagram fa-2x social-icon"
+              data-icon="instagram"
+              data-prefix="fab"
+              focusable="false"
+              role="img"
+              style={{}}
+              viewBox="0 0 448 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                fill="currentColor"
+                style={{}}
+              />
+            </svg>
+            <span
+              className="sr-only"
+            >
+              Follow edX on Instagram
+            </span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="http://www.reddit.com/r/edx"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+            title="Reddit"
+          >
+            <svg
+              aria-hidden="true"
+              className="svg-inline--fa fa-square-reddit fa-2x social-icon"
+              data-icon="square-reddit"
+              data-prefix="fab"
+              focusable="false"
+              role="img"
+              style={{}}
+              viewBox="0 0 448 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M64 32l320 0c35.3 0 64 28.7 64 64l0 320c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 96C0 60.7 28.7 32 64 32zM305.9 166.4c20.6 0 37.3-16.7 37.3-37.3s-16.7-37.3-37.3-37.3c-18 0-33.1 12.8-36.6 29.8c-30.2 3.2-53.8 28.8-53.8 59.9l0 .2c-32.8 1.4-62.8 10.7-86.6 25.5c-8.8-6.8-19.9-10.9-32-10.9c-28.9 0-52.3 23.4-52.3 52.3c0 21 12.3 39 30.1 47.4c1.7 60.7 67.9 109.6 149.3 109.6s147.6-48.9 149.3-109.7c17.7-8.4 29.9-26.4 29.9-47.3c0-28.9-23.4-52.3-52.3-52.3c-12 0-23 4-31.9 10.8c-24-14.9-54.3-24.2-87.5-25.4l0-.1c0-22.2 16.5-40.7 37.9-43.7l0 0c3.9 16.5 18.7 28.7 36.3 28.7zM155 248.1c14.6 0 25.8 15.4 25 34.4s-11.8 25.9-26.5 25.9s-27.5-7.7-26.6-26.7s13.5-33.5 28.1-33.5zm166.4 33.5c.9 19-12 26.7-26.6 26.7s-25.6-6.9-26.5-25.9c-.9-19 10.3-34.4 25-34.4s27.3 14.6 28.1 33.5zm-42.1 49.6c-9 21.5-30.3 36.7-55.1 36.7s-46.1-15.1-55.1-36.7c-1.1-2.6 .7-5.4 3.4-5.7c16.1-1.6 33.5-2.5 51.7-2.5s35.6 .9 51.7 2.5c2.7 .3 4.5 3.1 3.4 5.7z"
+                fill="currentColor"
+                style={{}}
+              />
+            </svg>
+            <span
+              className="sr-only"
+            >
+              Subscribe to the edX subreddit
+            </span>
+          </a>
+        </li>
+      </ul>
+      <ul
+        className="d-flex flex-row justify-content-between list-unstyled max-width-264 p-0 mb-5"
+      >
+        <li>
+          <a
+            href="https://play.google.com/store/apps/details?id=org.edx.mobile"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              alt="Download the edX mobile app from Google Play"
+              className="max-height-39"
+              src="https://prod-edxapp.edx-cdn.org/static/images/app/google_play_badge_45.6ea466e328da.png"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://itunes.apple.com/us/app/edx/id945480667?mt=8"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              alt="Download the edX mobile app from the Apple App Store"
+              className="max-height-39"
+              src="https://prod-edxapp.edx-cdn.org/static/images/app/app_store_badge_135x40.d0558d910630.svg"
+            />
+          </a>
+        </li>
+      </ul>
+      <p>
+        © 
+        2023
+         edX LLC. All rights reserved.
+        <br />
+        深圳市恒宇博科技有限公司 
+        <a
+          href="https://beian.miit.gov.cn"
+          style={
+            {
+              "textDecoration": "underline",
+            }
+          }
+        >
+          粤ICP备17044299号-2
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+`;
+
+exports[`<Footer /> renders correctly renders without a language selector 1`] = `
+<footer
+  aria-label="edX Home"
+  className="footer d-flex justify-content-center border-top py-3 px-4"
+  role="contentinfo"
+>
+  <div
+    className="container-fluid d-grid"
+  >
+    <div
+      className="area-1"
+    >
+      <a
+        aria-label="edX Home"
+        href="https://edx.org"
+      >
+        <img
+          alt="edX Logo"
+          src="https://edx-cdn.org/v3/prod/logo-trademark.svg"
+          style={
+            {
+              "maxHeight": 45,
+            }
+          }
+        />
+      </a>
+    </div>
+    <div
+      className="area-2"
+    >
+      <h2>
+        edX
+      </h2>
+      <ul
+        className="list-unstyled p-0 m-0"
+      >
+        <li>
+          <a
+            href="https://edx.org/about-us"
+          >
+            About
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://edx.org/affiliate-program"
+          >
+            Affiliates
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://business.edx.org/?utm_campaign=edX.org+Referral&utm_medium=Footer&utm_source=localhost"
+          >
+            edX for Business
+          </a>
+        </li>
+        <li>
+          <a
+            href="http://open.edx.org"
+          >
+            Open edX
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://edx.org/careers"
+          >
+            Careers
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://edx.org/news-announcements"
+          >
+            News
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div
+      className="area-3"
+    >
+      <h2>
+        Legal
+      </h2>
+      <ul
+        className="list-unstyled p-0 m-0"
+      >
+        <li>
+          <a
+            href="https://edx.org/edx-terms-service"
+          >
+            Terms of Service & Honor Code
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://edx.org/edx-privacy-policy"
+          >
+            Privacy Policy
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://edx.org/accessibility"
+          >
+            Accessibility Policy
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://edx.org/trademarks"
+          >
+            Trademark Policy
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://edx.org/sitemap"
+          >
+            Sitemap
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://edx.org/edx-privacy-policy/cookies"
+          >
+            Cookie Policy
+          </a>
+        </li>
+        <li>
+          <button
+            className="px-0 text-left text-decoration-none btn btn-link btn-inline"
+            disabled={false}
+            id="footer-dns-link"
+            onClick={[Function]}
+            type="button"
+          >
+            Your Privacy Choices
+          </button>
+        </li>
+      </ul>
+    </div>
+    <div
+      className="area-4"
+    >
+      <h2>
+        Connect
+      </h2>
+      <ul
+        className="list-unstyled p-0 m-0"
+      >
+        <li>
+          <a
+            href="https://www.edx.org/resources"
+          >
+            Idea Hub
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://courses.edx.org/support/contact_us"
+          >
+            Contact Us
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://support.edx.org"
+          >
+            Help Center
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://edx.org/policy/security"
+          >
+            Security
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://edx.org/media-kit"
+          >
+            Media Kit
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div
+      className="area-5"
+    >
+      <ul
+        className="d-flex flex-row justify-content-between list-unstyled max-width-222 p-0 mb-4"
+      >
+        <li>
+          <a
+            href="http://www.facebook.com/EdxOnline"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+            title="Facebook"
+          >
+            <svg
+              aria-hidden="true"
+              className="svg-inline--fa fa-square-facebook fa-2x social-icon"
+              data-icon="square-facebook"
+              data-prefix="fab"
+              focusable="false"
+              role="img"
+              style={{}}
+              viewBox="0 0 448 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64h98.2V334.2H109.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H255V480H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64z"
+                fill="currentColor"
+                style={{}}
+              />
+            </svg>
+            <span
+              className="sr-only"
+            >
+              Like edX on Facebook
+            </span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://twitter.com/edXOnline"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+            title="X (formerly Twitter)"
+          >
+            <svg
+              aria-hidden="true"
+              className="svg-inline--fa fa-square-x-twitter fa-2x social-icon"
+              data-icon="square-x-twitter"
+              data-prefix="fab"
+              focusable="false"
+              role="img"
+              style={{}}
+              viewBox="0 0 448 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm297.1 84L257.3 234.6 379.4 396H283.8L209 298.1 123.3 396H75.8l111-126.9L69.7 116h98l67.7 89.5L313.6 116h47.5zM323.3 367.6L153.4 142.9H125.1L296.9 367.6h26.3z"
+                fill="currentColor"
+                style={{}}
+              />
+            </svg>
+            <span
+              className="sr-only"
+            >
+              Follow edX on X (formerly Twitter)
+            </span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="http://www.linkedin.com/company/edx"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+            title="LinkedIn"
+          >
+            <svg
+              aria-hidden="true"
+              className="svg-inline--fa fa-linkedin fa-2x social-icon"
+              data-icon="linkedin"
+              data-prefix="fab"
+              focusable="false"
+              role="img"
+              style={{}}
+              viewBox="0 0 448 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
+                fill="currentColor"
+                style={{}}
+              />
+            </svg>
+            <span
+              className="sr-only"
+            >
+              Follow edX on LinkedIn
+            </span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.instagram.com/edxonline/"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+            title="Instagram"
+          >
+            <svg
+              aria-hidden="true"
+              className="svg-inline--fa fa-instagram fa-2x social-icon"
+              data-icon="instagram"
+              data-prefix="fab"
+              focusable="false"
+              role="img"
+              style={{}}
+              viewBox="0 0 448 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                fill="currentColor"
+                style={{}}
+              />
+            </svg>
+            <span
+              className="sr-only"
+            >
+              Follow edX on Instagram
+            </span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="http://www.reddit.com/r/edx"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+            title="Reddit"
+          >
+            <svg
+              aria-hidden="true"
+              className="svg-inline--fa fa-square-reddit fa-2x social-icon"
+              data-icon="square-reddit"
+              data-prefix="fab"
+              focusable="false"
+              role="img"
+              style={{}}
+              viewBox="0 0 448 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M64 32l320 0c35.3 0 64 28.7 64 64l0 320c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 96C0 60.7 28.7 32 64 32zM305.9 166.4c20.6 0 37.3-16.7 37.3-37.3s-16.7-37.3-37.3-37.3c-18 0-33.1 12.8-36.6 29.8c-30.2 3.2-53.8 28.8-53.8 59.9l0 .2c-32.8 1.4-62.8 10.7-86.6 25.5c-8.8-6.8-19.9-10.9-32-10.9c-28.9 0-52.3 23.4-52.3 52.3c0 21 12.3 39 30.1 47.4c1.7 60.7 67.9 109.6 149.3 109.6s147.6-48.9 149.3-109.7c17.7-8.4 29.9-26.4 29.9-47.3c0-28.9-23.4-52.3-52.3-52.3c-12 0-23 4-31.9 10.8c-24-14.9-54.3-24.2-87.5-25.4l0-.1c0-22.2 16.5-40.7 37.9-43.7l0 0c3.9 16.5 18.7 28.7 36.3 28.7zM155 248.1c14.6 0 25.8 15.4 25 34.4s-11.8 25.9-26.5 25.9s-27.5-7.7-26.6-26.7s13.5-33.5 28.1-33.5zm166.4 33.5c.9 19-12 26.7-26.6 26.7s-25.6-6.9-26.5-25.9c-.9-19 10.3-34.4 25-34.4s27.3 14.6 28.1 33.5zm-42.1 49.6c-9 21.5-30.3 36.7-55.1 36.7s-46.1-15.1-55.1-36.7c-1.1-2.6 .7-5.4 3.4-5.7c16.1-1.6 33.5-2.5 51.7-2.5s35.6 .9 51.7 2.5c2.7 .3 4.5 3.1 3.4 5.7z"
+                fill="currentColor"
+                style={{}}
+              />
+            </svg>
+            <span
+              className="sr-only"
+            >
+              Subscribe to the edX subreddit
+            </span>
+          </a>
+        </li>
+      </ul>
+      <ul
+        className="d-flex flex-row justify-content-between list-unstyled max-width-264 p-0 mb-5"
+      >
+        <li>
+          <a
+            href="https://play.google.com/store/apps/details?id=org.edx.mobile"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              alt="Download the edX mobile app from Google Play"
+              className="max-height-39"
+              src="https://prod-edxapp.edx-cdn.org/static/images/app/google_play_badge_45.6ea466e328da.png"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://itunes.apple.com/us/app/edx/id945480667?mt=8"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              alt="Download the edX mobile app from the Apple App Store"
+              className="max-height-39"
+              src="https://prod-edxapp.edx-cdn.org/static/images/app/app_store_badge_135x40.d0558d910630.svg"
+            />
+          </a>
+        </li>
+      </ul>
+      <p>
+        © 
+        2023
+         edX LLC. All rights reserved.
+        <br />
+        深圳市恒宇博科技有限公司 
+        <a
+          href="https://beian.miit.gov.cn"
+          style={
+            {
+              "textDecoration": "underline",
+            }
+          }
+        >
+          粤ICP备17044299号-2
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+`;
+
+exports[`<Footer /> renders correctly renders without a language selector in es 1`] = `
+<footer
+  aria-label="edX Home"
+  className="footer d-flex justify-content-center border-top py-3 px-4"
+  role="contentinfo"
+>
+  <div
+    className="container-fluid d-grid"
+  >
+    <div
+      className="area-1"
+    >
+      <a
+        aria-label="edX Home"
+        href="https://edx.org"
+      >
+        <img
+          alt="edX Logo"
+          src="https://edx-cdn.org/v3/prod/logo-trademark.svg"
+          style={
+            {
+              "maxHeight": 45,
+            }
+          }
+        />
+      </a>
+    </div>
+    <div
+      className="area-2"
+    >
+      <h2>
+        edX
+      </h2>
+      <ul
+        className="list-unstyled p-0 m-0"
+      >
+        <li>
+          <a
+            href="https://edx.org/es/about-us"
+          >
+            About
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://business.edx.org/?utm_campaign=edX.org+Referral&utm_medium=Footer&utm_source=localhost"
+          >
+            edX for Business
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://edx.org/es/news-announcements"
+          >
+            News
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div
+      className="area-3"
+    >
+      <h2>
+        Legal
+      </h2>
+      <ul
+        className="list-unstyled p-0 m-0"
+      >
+        <li>
+          <a
+            href="https://edx.org/es/edx-terms-service"
+          >
+            Terms of Service & Honor Code
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://edx.org/es/edx-privacy-policy"
+          >
+            Privacy Policy
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://edx.org/es/accessibility"
+          >
+            Accessibility Policy
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://edx.org/es/edx-privacy-policy/cookies"
+          >
+            Cookie Policy
+          </a>
+        </li>
+        <li>
+          <button
+            className="px-0 text-left text-decoration-none btn btn-link btn-inline"
+            disabled={false}
+            id="footer-dns-link"
+            onClick={[Function]}
+            type="button"
+          >
+            Your Privacy Choices
+          </button>
+        </li>
+      </ul>
+    </div>
+    <div
+      className="area-4"
+    >
+      <h2>
+        Connect
+      </h2>
+      <ul
+        className="list-unstyled p-0 m-0"
+      >
+        <li>
+          <a
+            href="https://www.edx.org/resources"
+          >
+            Idea Hub
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://courses.edx.org/support/contact_us"
+          >
+            Contact Us
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://support.edx.org"
+          >
+            Help Center
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://edx.org/es/policy/security"
+          >
+            Security
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div
+      className="area-5"
+    >
+      <ul
+        className="d-flex flex-row justify-content-between list-unstyled max-width-222 p-0 mb-4"
+      >
+        <li>
+          <a
+            href="http://www.facebook.com/EdxOnline"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+            title="Facebook"
+          >
+            <svg
+              aria-hidden="true"
+              className="svg-inline--fa fa-square-facebook fa-2x social-icon"
+              data-icon="square-facebook"
+              data-prefix="fab"
+              focusable="false"
+              role="img"
+              style={{}}
+              viewBox="0 0 448 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64h98.2V334.2H109.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H255V480H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64z"
+                fill="currentColor"
+                style={{}}
+              />
+            </svg>
+            <span
+              className="sr-only"
+            >
+              Like edX on Facebook
+            </span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://twitter.com/edXOnline"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+            title="X (formerly Twitter)"
+          >
+            <svg
+              aria-hidden="true"
+              className="svg-inline--fa fa-square-x-twitter fa-2x social-icon"
+              data-icon="square-x-twitter"
+              data-prefix="fab"
+              focusable="false"
+              role="img"
+              style={{}}
+              viewBox="0 0 448 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm297.1 84L257.3 234.6 379.4 396H283.8L209 298.1 123.3 396H75.8l111-126.9L69.7 116h98l67.7 89.5L313.6 116h47.5zM323.3 367.6L153.4 142.9H125.1L296.9 367.6h26.3z"
+                fill="currentColor"
+                style={{}}
+              />
+            </svg>
+            <span
+              className="sr-only"
+            >
+              Follow edX on X (formerly Twitter)
+            </span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="http://www.linkedin.com/company/edx"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+            title="LinkedIn"
+          >
+            <svg
+              aria-hidden="true"
+              className="svg-inline--fa fa-linkedin fa-2x social-icon"
+              data-icon="linkedin"
+              data-prefix="fab"
+              focusable="false"
+              role="img"
+              style={{}}
+              viewBox="0 0 448 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
+                fill="currentColor"
+                style={{}}
+              />
+            </svg>
+            <span
+              className="sr-only"
+            >
+              Follow edX on LinkedIn
+            </span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.instagram.com/edxonline/"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+            title="Instagram"
+          >
+            <svg
+              aria-hidden="true"
+              className="svg-inline--fa fa-instagram fa-2x social-icon"
+              data-icon="instagram"
+              data-prefix="fab"
+              focusable="false"
+              role="img"
+              style={{}}
+              viewBox="0 0 448 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                fill="currentColor"
+                style={{}}
+              />
+            </svg>
+            <span
+              className="sr-only"
+            >
+              Follow edX on Instagram
+            </span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="http://www.reddit.com/r/edx"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+            title="Reddit"
+          >
+            <svg
+              aria-hidden="true"
+              className="svg-inline--fa fa-square-reddit fa-2x social-icon"
+              data-icon="square-reddit"
+              data-prefix="fab"
+              focusable="false"
+              role="img"
+              style={{}}
+              viewBox="0 0 448 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M64 32l320 0c35.3 0 64 28.7 64 64l0 320c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 96C0 60.7 28.7 32 64 32zM305.9 166.4c20.6 0 37.3-16.7 37.3-37.3s-16.7-37.3-37.3-37.3c-18 0-33.1 12.8-36.6 29.8c-30.2 3.2-53.8 28.8-53.8 59.9l0 .2c-32.8 1.4-62.8 10.7-86.6 25.5c-8.8-6.8-19.9-10.9-32-10.9c-28.9 0-52.3 23.4-52.3 52.3c0 21 12.3 39 30.1 47.4c1.7 60.7 67.9 109.6 149.3 109.6s147.6-48.9 149.3-109.7c17.7-8.4 29.9-26.4 29.9-47.3c0-28.9-23.4-52.3-52.3-52.3c-12 0-23 4-31.9 10.8c-24-14.9-54.3-24.2-87.5-25.4l0-.1c0-22.2 16.5-40.7 37.9-43.7l0 0c3.9 16.5 18.7 28.7 36.3 28.7zM155 248.1c14.6 0 25.8 15.4 25 34.4s-11.8 25.9-26.5 25.9s-27.5-7.7-26.6-26.7s13.5-33.5 28.1-33.5zm166.4 33.5c.9 19-12 26.7-26.6 26.7s-25.6-6.9-26.5-25.9c-.9-19 10.3-34.4 25-34.4s27.3 14.6 28.1 33.5zm-42.1 49.6c-9 21.5-30.3 36.7-55.1 36.7s-46.1-15.1-55.1-36.7c-1.1-2.6 .7-5.4 3.4-5.7c16.1-1.6 33.5-2.5 51.7-2.5s35.6 .9 51.7 2.5c2.7 .3 4.5 3.1 3.4 5.7z"
+                fill="currentColor"
+                style={{}}
+              />
+            </svg>
+            <span
+              className="sr-only"
+            >
+              Subscribe to the edX subreddit
+            </span>
+          </a>
+        </li>
+      </ul>
+      <ul
+        className="d-flex flex-row justify-content-between list-unstyled max-width-264 p-0 mb-5"
+      >
+        <li>
+          <a
+            href="https://play.google.com/store/apps/details?id=org.edx.mobile"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              alt="Download the edX mobile app from Google Play"
+              className="max-height-39"
+              src="https://prod-edxapp.edx-cdn.org/static/images/app/google_play_badge_45.6ea466e328da.png"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://itunes.apple.com/us/app/edx/id945480667?mt=8"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              alt="Download the edX mobile app from the Apple App Store"
+              className="max-height-39"
+              src="https://prod-edxapp.edx-cdn.org/static/images/app/app_store_badge_135x40.d0558d910630.svg"
+            />
+          </a>
+        </li>
+      </ul>
+      <p>
+        © 
+        2023
+         edX LLC. All rights reserved.
+        <br />
+        深圳市恒宇博科技有限公司 
+        <a
+          href="https://beian.miit.gov.cn"
+          style={
+            {
+              "textDecoration": "underline",
+            }
+          }
+        >
+          粤ICP备17044299号-2
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+`;
+
+exports[`<Footer /> renders correctly when hidden should hide itself 1`] = `null`;

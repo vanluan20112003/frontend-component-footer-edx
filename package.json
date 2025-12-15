@@ -1,0 +1,70 @@
+{
+  "name": "@edx/frontend-component-footer-edx",
+  "version": "1.0.0-semantically-released",
+  "description": "Footer component for edX frontend applications",
+  "main": "dist/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "make build",
+    "i18n_extract": "fedx-scripts formatjs extract",
+    "lint": "fedx-scripts eslint --ext .js --ext .jsx .",
+    "snapshot": "fedx-scripts jest --updateSnapshot",
+    "start": "fedx-scripts webpack-dev-server --progress",
+    "test": "fedx-scripts jest --coverage"
+  },
+  "files": [
+    "/dist"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edx/frontend-component-footer-edx.git"
+  },
+  "author": "edX",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/edx/frontend-component-footer-edx/issues"
+  },
+  "homepage": "https://github.com/edx/frontend-component-footer-edx#readme",
+  "devDependencies": {
+    "@edx/brand": "npm:@edx/elm-theme@^1.8.2",
+    "@edx/browserslist-config": "^1.1.1",
+    "@edx/frontend-platform": "8.5.2",
+    "@edx/reactifex": "2.2.0",
+    "@openedx/frontend-build": "14.6.2",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^14.3.1",
+    "husky": "9.1.7",
+    "prop-types": "15.8.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-redux": "7.2.9",
+    "react-router-dom": "6.30.2",
+    "react-test-renderer": "18.3.1",
+    "reactifex": "1.1.1",
+    "redux": "4.2.1"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "6.7.2",
+    "@fortawesome/free-brands-svg-icons": "6.7.2",
+    "@fortawesome/free-regular-svg-icons": "6.7.2",
+    "@fortawesome/free-solid-svg-icons": "6.7.2",
+    "@fortawesome/react-fontawesome": "0.2.6",
+    "@openedx/frontend-plugin-framework": "^1.7.0",
+    "js-cookie": "^3.0.1",
+    "lodash": "^4.17.21"
+  },
+  "peerDependencies": {
+    "@edx/frontend-platform": "^7.0.0 || ^8.0.0",
+    "@openedx/paragon": "^23.0.0",
+    "prop-types": "^15.7.0",
+    "react": "^16.9.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.9.0 || ^17.0.0 || ^18.0.0"
+  }
+}
