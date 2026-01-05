@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+.vnu-footer {
+  position: relative;
+  background: linear-gradient(180deg, #1e3a5f 0%, #2c5282 100%);
+  color: #e8eaf0;
+  padding: 5rem 2rem 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  overflow: hidden;
+
+  // Animated background - Removed to match sidebar look
+  &__bg-animation {
+    display: none;
+  }
+
+  &__bg-circle {
+    display: none;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 4rem;
+    margin-bottom: 3rem;
+
+    @media (max-width: 968px) {
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+
+    @media (max-width: 640px) {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+  }
+
+  // Brand Section
+  &__brand {
+    margin-bottom: 1.5rem;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+  }
+
+  &__logo-icon {
+    font-size: 2.5rem;
+    filter: drop-shadow(0 0 20px rgba(96, 165, 250, 0.5));
+    animation: pulse-glow 3s infinite;
+  }
+
+  &__logo-tagline {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-left: 0.5rem;
+  }
+
+  &__description {
+    line-height: 1.8;
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    margin-bottom: 2rem;
+    max-width: 400px;
+  }
+
+  // Headings
+  &__heading {
+    color: #f1f5f9;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 0.75rem;
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: #60a5fa;
+      border-radius: 2px;
+    }
+  }
+
+  // Social Links
+  &__socials {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  &__social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: #e2e8f0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    font-size: 1.125rem;
+    position: relative;
+    overflow: hidden;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(96, 165, 250, 0.2), rgba(96, 165, 250, 0.1));
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    &:hover {
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 10px 30px rgba(96, 165, 250, 0.3);
+      border-color: rgba(255, 255, 255, 0.3);
+
+      &:before {
+        opacity: 1;
+      }
+    }
+
+    &--facebook:hover {
+      box-shadow: 0 10px 30px rgba(59, 89, 152, 0.4);
+      color: #4267B2;
+    }
+
+    &--twitter:hover {
+      box-shadow: 0 10px 30px rgba(29, 161, 242, 0.4);
+      color: #1DA1F2;
+    }
+
+    &--youtube:hover {
+      box-shadow: 0 10px 30px rgba(255, 0, 0, 0.4);
+      color: #FF0000;
+    }
+
+    &--linkedin:hover {
+      box-shadow: 0 10px 30px rgba(0, 119, 181, 0.4);
+      color: #0077B5;
+    }
+
+    &--instagram:hover {
+      box-shadow: 0 10px 30px rgba(225, 48, 108, 0.4);
+      background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af);
+      color: #fff;
+    }
+
+    svg {
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  // Quick Links
+  &__link-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__link-item {
+    margin-bottom: 0.75rem;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 0.938rem;
+    transition: all 0.3s ease;
+    padding: 0.5rem 0;
+    position: relative;
+
+    &:hover {
+      color: #60a5fa;
+      transform: translateX(6px);
+
+      .vnu-footer__link-icon {
+        color: #60a5fa;
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  &__link-icon {
+    font-size: 1rem;
+    color: #64748b;
+    transition: all 0.3s ease;
+  }
+
+  // Contact Section
+  &__contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__contact-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  &__contact-icon {
+    font-size: 1.25rem;
+    color: #60a5fa;
+    margin-top: 0.25rem;
+    min-width: 24px;
+    filter: drop-shadow(0 0 8px rgba(96, 165, 250, 0.4));
+  }
+
+  &__contact-text {
+    color: #cbd5e1;
+    font-size: 0.938rem;
+    line-height: 1.7;
+
+    strong {
+      color: #f1f5f9;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+  }
+
+  // Bottom Bar
+  &__bottom {
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 2rem 0;
+    margin-top: 3rem;
+  }
+
+  &__bottom-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+
+    @media (max-width: 640px) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  &__copyright {
+    font-size: 0.875rem;
+    color: #94a3b8;
+    margin: 0;
+  }
+
+  &__bottom-links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+
+    a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #60a5fa;
+      }
+    }
+  }
+
+  &__separator {
+    color: #475569;
+    user-select: none;
+  }
+}
+
+// Animations
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.3;
+  }
+
+  50% {
+    transform: translateY(-30px) scale(1.1);
+    opacity: 0.5;
+  }
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    filter: drop-shadow(0 0 20px rgba(96, 165, 250, 0.5));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 30px rgba(96, 165, 250, 0.7));
+  }
+}

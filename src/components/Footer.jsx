@@ -1,262 +1,131 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { sendTrackEvent } from '@edx/frontend-platform/analytics';
+import { injectIntl, intlShape } from '@edx/frontend-platform/i18n';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  APP_CONFIG_INITIALIZED,
-  mergeConfig,
-  subscribe,
-} from '@edx/frontend-platform';
-import { FormattedMessage, injectIntl, intlShape } from '@edx/frontend-platform/i18n';
-import { ensureConfig } from '@edx/frontend-platform/config';
-import { AppContext } from '@edx/frontend-platform/react';
-
-import Cookies from 'js-cookie';
-import LinkList from './LinkList';
-import AppleAppStoreButton from './AppleAppStoreButton';
-import GooglePlayStoreButton from './GooglePlayStoreButton';
-import SocialIconLinks from './SocialIconLinks';
-import messages from './Footer.messages';
-import LanguageSelector from './LanguageSelector';
-
-ensureConfig([
-  'LOGO_TRADEMARK_URL',
-], 'Footer component');
-
-const EVENT_NAMES = {
-  FOOTER_LINK: 'edx.bi.footer.link',
-};
-
-const MARKETING_BASE_URL = 'https://edx.org';
-
-const CCPA_COOKIE_NAME = 'edx_do_not_sell';
-
-// Some MFEs (such as frontend-app-payment) don't want a footer to be shown.
-// This lets them hide it.
-subscribe(APP_CONFIG_INITIALIZED, () => {
-  mergeConfig({
-    HIDE_FOOTER: !!process.env.HIDE_FOOTER,
-  }, 'Footer additional config');
-});
+  faFacebookF,
+  faYoutube,
+  faLinkedinIn,
+  faTwitter,
+  faInstagram
+} from '@fortawesome/free-brands-svg-icons';
+import {
+  faEnvelope,
+  faPhone,
+  faMapMarkerAlt,
+  faGraduationCap,
+  faBook,
+  faUsers,
+  faLightbulb
+} from '@fortawesome/free-solid-svg-icons';
+import './Footer.scss';
 
 class Footer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.externalLinkClickHandler = this.externalLinkClickHandler.bind(this);
-
-    this.state = {
-      // Used for constructing the enterprise market link.
-      utmSource: 'edx.org',
-    };
-  }
-
-  componentDidMount() {
-    // eslint-disable-next-line react/no-did-mount-set-state
-    this.setState({
-      // Wait until component mount to get the hostname to preserve
-      // gatsby compatibility.
-      utmSource: global.location.hostname,
-    });
-  }
-
-  getLocalePrefix(locale) {
-    const twoLetterPrefix = locale.substring(0, 2).toLowerCase();
-    if (twoLetterPrefix === 'en') {
-      return '';
-    }
-    return `/${twoLetterPrefix}`;
-  }
-
-  // Added specific check for edX mobile app
-  isMobile = () => navigator.userAgent.match('org.edx.mobile');
-
-  externalLinkClickHandler(event) {
-    const label = event.currentTarget.getAttribute('href');
-    const eventName = EVENT_NAMES.FOOTER_LINK;
-    const properties = {
-      category: 'outbound_link',
-      label,
-    };
-    sendTrackEvent(eventName, properties);
-  }
-
-  toggleConsentModal() {
-    window.OneTrust?.ToggleInfoDisplay();
-    const { host } = new URL(`${MARKETING_BASE_URL}`);
-    // Use global domain (`.edx.org`) without the subdomain
-    const cookieOptions = { host, expires: 365 };
-    Cookies.set(CCPA_COOKIE_NAME, true, cookieOptions);
-  }
-
   render() {
-    const {
-      supportedLanguages,
-      onLanguageSelected,
-      logo,
-      intl,
-    } = this.props;
-    const showLanguageSelector = supportedLanguages.length > 0 && onLanguageSelected;
-    const localePrefix = this.getLocalePrefix(intl.locale);
+    const { intl } = this.props;
 
-    const { config } = this.context;
-
-    if (config.HIDE_FOOTER) {
-      return null;
-    }
+    const quickLinks = [
+      { title: 'Về chúng tôi', href: '#', icon: faUsers },
+      { title: 'Đào tạo', href: '#', icon: faGraduationCap },
+      { title: 'Nghiên cứu', href: '#', icon: faLightbulb },
+      { title: 'Thư viện', href: '#', icon: faBook },
+    ];
 
     return (
-      <footer
-        role="contentinfo"
-        aria-label={intl.formatMessage(messages['footer.logo.ariaLabel'])}
-        className="footer d-flex justify-content-center border-top py-3 px-4"
-      >
-        <div className="container-fluid d-grid">
-          <div className="area-1">
-            <a
-              href="https://edx.org"
-              aria-label={intl.formatMessage(messages['footer.logo.ariaLabel'])}
-            >
-              <img
-                src={logo || config.LOGO_TRADEMARK_URL}
-                alt={intl.formatMessage(messages['footer.logo.altText'])}
-                style={{ maxHeight: 45 }}
-              />
-            </a>
-            {showLanguageSelector && (
-              <div className="i18n d-flex mt-4">
-                <LanguageSelector options={supportedLanguages} onSubmit={onLanguageSelected} />
-              </div>
-            )}
-          </div>
-          <LinkList
-            className="area-2"
-            title="edX"
-            links={[
-              {
-                href: `${MARKETING_BASE_URL}${localePrefix}/about-us`,
-                title: intl.formatMessage(messages['footer.edxLinks.about']),
-              },
-              {
-                href: `${MARKETING_BASE_URL}${localePrefix}/affiliate-program`,
-                title: intl.formatMessage(messages['footer.edxLinks.affiliates']),
-                hidden: intl.locale === 'es',
-              },
-              {
-                href: `https://business.edx.org/?utm_campaign=edX.org+Referral&utm_medium=Footer&utm_source=${this.state.utmSource}`,
-                title: intl.formatMessage(messages['footer.edxLinks.business']),
-              },
-              {
-                href: 'http://open.edx.org',
-                title: intl.formatMessage(messages['footer.edxLinks.openEdx']),
-                hidden: intl.locale === 'es',
-              },
-              {
-                href: `${MARKETING_BASE_URL}${localePrefix}/careers`,
-                title: intl.formatMessage(messages['footer.edxLinks.careers']),
-                hidden: intl.locale === 'es',
-              },
-              {
-                href: `${MARKETING_BASE_URL}${localePrefix}/news-announcements`,
-                title: intl.formatMessage(messages['footer.edxLinks.news']),
-              },
-            ]}
-          />
-          <LinkList
-            className="area-3"
-            title={intl.formatMessage(messages['footer.legalLinks.heading'])}
-            links={[
-              {
-                href: `${MARKETING_BASE_URL}${localePrefix}/edx-terms-service`,
-                title: intl.formatMessage(messages['footer.legalLinks.termsOfService']),
-              },
-              {
-                href: `${MARKETING_BASE_URL}${localePrefix}/edx-privacy-policy`,
-                title: intl.formatMessage(messages['footer.legalLinks.privacyPolicy']),
-              },
-              {
-                href: `${MARKETING_BASE_URL}${localePrefix}/accessibility`,
-                title: intl.formatMessage(messages['footer.legalLinks.a11yPolicy']),
-              },
-              {
-                href: `${MARKETING_BASE_URL}${localePrefix}/trademarks`,
-                title: intl.formatMessage(messages['footer.legalLinks.trademarkPolicy']),
-                hidden: intl.locale === 'es',
-              },
-              {
-                href: `${MARKETING_BASE_URL}${localePrefix}/sitemap`,
-                title: intl.formatMessage(messages['footer.legalLinks.sitemap']),
-                hidden: intl.locale === 'es',
-              },
-              {
-                href: `${MARKETING_BASE_URL}${localePrefix}/edx-privacy-policy/cookies`,
-                title: intl.formatMessage(messages['footer.legalLinks.cookiePolicy']),
-              },
-              {
-                title: intl.formatMessage(messages['footer.legalLinks.doNotSellData']),
-                className: 'px-0 text-left text-decoration-none',
-                onClick: this.toggleConsentModal,
-                variant: 'link',
-                size: 'inline',
-                id: 'footer-dns-link',
-              },
-            ]}
-          />
-          <LinkList
-            className="area-4"
-            title={intl.formatMessage(messages['footer.connectLinks.heading'])}
-            links={[
-              {
-                href: 'https://www.edx.org/resources',
-                title: intl.formatMessage(messages['footer.connectLinks.blog']),
-              },
-              {
-                href: 'https://courses.edx.org/support/contact_us',
-                title: intl.formatMessage(messages['footer.connectLinks.contact']),
-              },
-              {
-                href: 'https://support.edx.org',
-                title: intl.formatMessage(messages['footer.connectLinks.help']),
-              },
-              {
-                href: `${MARKETING_BASE_URL}${localePrefix}/policy/security`,
-                title: intl.formatMessage(messages['footer.connectLinks.security']),
-              },
-              {
-                href: `${MARKETING_BASE_URL}${localePrefix}/media-kit`,
-                title: intl.formatMessage(messages['footer.connectLinks.mediaKit']),
-                hidden: intl.locale === 'es',
-              },
-            ]}
-          />
-          <div className="area-5">
-            <ul className="d-flex flex-row justify-content-between list-unstyled max-width-222 p-0 mb-4">
-              <SocialIconLinks onClick={this.externalLinkClickHandler} />
-            </ul>
-            {!this.isMobile() && (
-            <ul className="d-flex flex-row justify-content-between list-unstyled max-width-264 p-0 mb-5">
-              <li>
-                <GooglePlayStoreButton onClick={this.externalLinkClickHandler} />
-              </li>
-              <li>
-                <AppleAppStoreButton onClick={this.externalLinkClickHandler} />
-              </li>
-            </ul>
-            )}
-            <p>
-              © {new Date().getFullYear()} edX LLC. All rights reserved.
-              <br />
-              <FormattedMessage
-                id="footer.trademarks"
-                defaultMessage="{icpMessage}"
-                description="A description of the trademarks that belong to edX."
-                values={{
-                  icpMessage: (
-                    <>
-                      深圳市恒宇博科技有限公司 <a style={{ textDecoration: 'underline' }} href="https://beian.miit.gov.cn">粤ICP备17044299号-2</a>
-                    </>
-                  ),
-                }}
-              />
+      <footer className="vnu-footer" role="contentinfo" aria-label="Footer">
+        {/* Animated background elements */}
+        <div className="vnu-footer__bg-animation">
+          <div className="vnu-footer__bg-circle vnu-footer__bg-circle--1"></div>
+          <div className="vnu-footer__bg-circle vnu-footer__bg-circle--2"></div>
+          <div className="vnu-footer__bg-circle vnu-footer__bg-circle--3"></div>
+        </div>
+
+        <div className="vnu-footer__content">
+          {/* Main Brand Section */}
+          <div className="vnu-footer__column vnu-footer__column--main">
+            <div className="vnu-footer__brand">
+              <h3 className="vnu-footer__logo">
+                <span className="vnu-footer__logo-icon">🎓</span>
+                VNU-HCM
+              </h3>
+              {/* <div className="vnu-footer__logo-tagline">Excellence in Education</div> */}
+            </div>
+            <p className="vnu-footer__description">
+              ĐHQG-HCM là trung tâm đào tạo đại học, sau đại học và nghiên cứu khoa học – công nghệ đa ngành, đa lĩnh vực, chất lượng cao, đạt trình độ tiên tiến, làm nòng cốt cho hệ thống giáo dục đại học và đáp ứng nhu cầu phát triển kinh tế – xã hội.
             </p>
+            <div className="vnu-footer__socials">
+              <a href="https://www.facebook.com/vnuhcm.info/?locale=vi_VN" aria-label="Facebook" target="_blank" rel="noopener noreferrer" className="vnu-footer__social-link vnu-footer__social-link--facebook">
+                <FontAwesomeIcon icon={faFacebookF} />
+              </a>
+              <a href="https://www.youtube.com/@vnuhcm-info" aria-label="YouTube" target="_blank" rel="noopener noreferrer" className="vnu-footer__social-link vnu-footer__social-link--youtube">
+                <FontAwesomeIcon icon={faYoutube} />
+              </a>
+              <a href="https://www.linkedin.com/school/vietnam-national-university-hcmc/?originalSubdomain=vn" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" className="vnu-footer__social-link vnu-footer__social-link--linkedin">
+                <FontAwesomeIcon icon={faLinkedinIn} />
+              </a>
+              <a href="https://www.instagram.com/vnuhcm" aria-label="Instagram" target="_blank" rel="noopener noreferrer" className="vnu-footer__social-link vnu-footer__social-link--instagram">
+                <FontAwesomeIcon icon={faInstagram} />
+              </a>
+            </div>
+          </div>
+
+          {/* Quick Links Section */}
+          <div className="vnu-footer__column vnu-footer__column--links">
+            <h4 className="vnu-footer__heading">Liên kết nhanh</h4>
+            <ul className="vnu-footer__link-list">
+              {quickLinks.map((link, index) => (
+                <li key={index} className="vnu-footer__link-item">
+                  <a href={link.href} className="vnu-footer__link">
+                    <FontAwesomeIcon icon={link.icon} className="vnu-footer__link-icon" />
+                    <span>{link.title}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Section */}
+          <div className="vnu-footer__column vnu-footer__column--contact">
+            <h4 className="vnu-footer__heading">Liên hệ</h4>
+            <div className="vnu-footer__contact-list">
+              <div className="vnu-footer__contact-item">
+                <FontAwesomeIcon icon={faMapMarkerAlt} className="vnu-footer__contact-icon" />
+                <div className="vnu-footer__contact-text">
+                  <strong>Địa chỉ:</strong><br />
+                  Đường Võ Trường Toản, Khu phố 33, Phường Linh Xuân, TP.HCM
+                </div>
+              </div>
+              <div className="vnu-footer__contact-item">
+                <FontAwesomeIcon icon={faPhone} className="vnu-footer__contact-icon" />
+                <div className="vnu-footer__contact-text">
+                  <strong>Điện thoại:</strong><br />
+                  (84) 2837 242 181 - ext 1652
+                </div>
+              </div>
+              <div className="vnu-footer__contact-item">
+                <FontAwesomeIcon icon={faEnvelope} className="vnu-footer__contact-icon" />
+                <div className="vnu-footer__contact-text">
+                  <strong>Email:</strong><br />
+                  info@vnuhcm.edu.vn
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="vnu-footer__bottom">
+          <div className="vnu-footer__bottom-content">
+            <p className="vnu-footer__copyright">
+              &copy; {new Date().getFullYear()} Đại học Quốc gia Thành phố Hồ Chí Minh. Bảo lưu mọi quyền.
+            </p>
+            <div className="vnu-footer__bottom-links">
+              <a href="#privacy">Chính sách bảo mật</a>
+              <span className="vnu-footer__separator">•</span>
+              <a href="#terms">Điều khoản sử dụng</a>
+              <span className="vnu-footer__separator">•</span>
+              <a href="#accessibility">Khả năng truy cập</a>
+            </div>
           </div>
         </div>
       </footer>
@@ -264,23 +133,8 @@ class Footer extends React.Component {
   }
 }
 
-Footer.contextType = AppContext;
-
 Footer.propTypes = {
   intl: intlShape.isRequired,
-  logo: PropTypes.string,
-  onLanguageSelected: PropTypes.func,
-  supportedLanguages: PropTypes.arrayOf(PropTypes.shape({
-    label: PropTypes.string.isRequired,
-    value: PropTypes.string.isRequired,
-  })),
-};
-
-Footer.defaultProps = {
-  logo: undefined,
-  onLanguageSelected: undefined,
-  supportedLanguages: [],
 };
 
 export default injectIntl(Footer);
-export { EVENT_NAMES };

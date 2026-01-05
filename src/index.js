@@ -1,4 +1,4 @@
-import Footer, { EVENT_NAMES } from './components/Footer';
+import Footer from './components/Footer';
 import StudioFooter from './components/studio-footer';
 import FooterSlot from './plugin-slots/FooterSlot';
 import StudioFooterSlot from './plugin-slots/StudioFooterSlot';
@@ -8,7 +8,6 @@ import messages from './i18n/index';
 export {
   Footer,
   messages,
-  EVENT_NAMES,
   StudioFooter,
   FooterSlot,
   StudioFooterSlot,

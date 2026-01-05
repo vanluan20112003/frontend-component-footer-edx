@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VNU-HCM Footer Demo</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: #0f172a;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #e2e8f0;
+      padding: 2rem;
+    }
+
+    .demo-content {
+      text-align: center;
+      max-width: 600px;
+    }
+
+    .demo-content h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #ec4899 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .demo-content p {
+      font-size: 1.125rem;
+      color: #cbd5e1;
+      line-height: 1.8;
+    }
+
+    /* Footer Styles */
+    .vnu-footer {
+      position: relative;
+      background: linear-gradient(135deg, hsl(210, 100%, 8%) 0%, hsl(220, 90%, 12%) 50%, hsl(230, 80%, 15%) 100%);
+      color: #e8eaf0;
+      padding: 5rem 2rem 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      overflow: hidden;
+    }
+
+    .vnu-footer__bg-animation {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .vnu-footer__bg-circle {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+      animation: float 20s infinite ease-in-out;
+    }
+
+    .vnu-footer__bg-circle--1 {
+      width: 400px;
+      height: 400px;
+      top: -200px;
+      right: -100px;
+      animation-delay: 0s;
+    }
+
+    .vnu-footer__bg-circle--2 {
+      width: 300px;
+      height: 300px;
+      bottom: -100px;
+      left: -50px;
+      animation-delay: 7s;
+      background: radial-gradient(circle, rgba(168, 85, 247, 0.12) 0%, transparent 70%);
+    }
+
+    .vnu-footer__bg-circle--3 {
+      width: 250px;
+      height: 250px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation-delay: 14s;
+      background: radial-gradient(circle, rgba(236, 72, 153, 0.1) 0%, transparent 70%);
+    }
+
+    .vnu-footer__content {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1.5fr;
+      gap: 4rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (max-width: 968px) {
+      .vnu-footer__content {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .vnu-footer__content {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+    }
+
+    .vnu-footer__brand {
+      margin-bottom: 1.5rem;
+    }
+
+    .vnu-footer__logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #ec4899 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.5px;
+    }
+
+    .vnu-footer__logo-icon {
+      font-size: 2.5rem;
+      filter: drop-shadow(0 0 20px rgba(96, 165, 250, 0.5));
+      animation: pulse-glow 3s infinite;
+    }
+
+    .vnu-footer__logo-tagline {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-left: 0.5rem;
+    }
+
+    .vnu-footer__description {
+      line-height: 1.8;
+      font-size: 0.95rem;
+      color: #cbd5e1;
+      margin-bottom: 2rem;
+      max-width: 400px;
+    }
+
+    .vnu-footer__heading {
+      color: #f1f5f9;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      font-size: 1.125rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      position: relative;
+      padding-bottom: 0.75rem;
+    }
+
+    .vnu-footer__heading:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: linear-gradient(90deg, #60a5fa, #a78bfa);
+      border-radius: 2px;
+    }
+
+    .vnu-footer__socials {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .vnu-footer__social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      color: #e2e8f0;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      text-decoration: none;
+      font-size: 1.125rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .vnu-footer__social-link:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(96, 165, 250, 0.2), rgba(167, 139, 250, 0.2));
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .vnu-footer__social-link:hover {
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 10px 30px rgba(96, 165, 250, 0.3);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .vnu-footer__social-link:hover:before {
+      opacity: 1;
+    }
+
+    .vnu-footer__social-link--facebook:hover {
+      box-shadow: 0 10px 30px rgba(59, 89, 152, 0.4);
+      color: #4267B2;
+    }
+
+    .vnu-footer__social-link--twitter:hover {
+      box-shadow: 0 10px 30px rgba(29, 161, 242, 0.4);
+      color: #1DA1F2;
+    }
+
+    .vnu-footer__social-link--youtube:hover {
+      box-shadow: 0 10px 30px rgba(255, 0, 0, 0.4);
+      color: #FF0000;
+    }
+
+    .vnu-footer__social-link--linkedin:hover {
+      box-shadow: 0 10px 30px rgba(0, 119, 181, 0.4);
+      color: #0077B5;
+    }
+
+    .vnu-footer__social-link--instagram:hover {
+      box-shadow: 0 10px 30px rgba(225, 48, 108, 0.4);
+      background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af);
+      color: #fff;
+    }
+
+    .vnu-footer__social-link svg {
+      position: relative;
+      z-index: 1;
+    }
+
+    .vnu-footer__link-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .vnu-footer__link-item {
+      margin-bottom: 0.75rem;
+    }
+
+    .vnu-footer__link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 0.938rem;
+      transition: all 0.3s ease;
+      padding: 0.5rem 0;
+      position: relative;
+    }
+
+    .vnu-footer__link:hover {
+      color: #60a5fa;
+      transform: translateX(6px);
+    }
+
+    .vnu-footer__link:hover .vnu-footer__link-icon {
+      color: #a78bfa;
+      transform: scale(1.2);
+    }
+
+    .vnu-footer__link-icon {
+      font-size: 1rem;
+      color: #64748b;
+      transition: all 0.3s ease;
+    }
+
+    .vnu-footer__contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .vnu-footer__contact-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .vnu-footer__contact-icon {
+      font-size: 1.25rem;
+      color: #60a5fa;
+      margin-top: 0.25rem;
+      min-width: 24px;
+      filter: drop-shadow(0 0 8px rgba(96, 165, 250, 0.4));
+    }
+
+    .vnu-footer__contact-text {
+      color: #cbd5e1;
+      font-size: 0.938rem;
+      line-height: 1.7;
+    }
+
+    .vnu-footer__contact-text strong {
+      color: #f1f5f9;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .vnu-footer__bottom {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 2rem 0;
+      margin-top: 3rem;
+    }
+
+    .vnu-footer__bottom-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 640px) {
+      .vnu-footer__bottom-content {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    .vnu-footer__copyright {
+      font-size: 0.875rem;
+      color: #94a3b8;
+      margin: 0;
+    }
+
+    .vnu-footer__bottom-links {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .vnu-footer__bottom-links a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: color 0.3s ease;
+    }
+
+    .vnu-footer__bottom-links a:hover {
+      color: #60a5fa;
+    }
+
+    .vnu-footer__separator {
+      color: #475569;
+      user-select: none;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.3;
+      }
+      50% {
+        transform: translateY(-30px) scale(1.1);
+        opacity: 0.5;
+      }
+    }
+
+    @keyframes pulse-glow {
+      0%, 100% {
+        filter: drop-shadow(0 0 20px rgba(96, 165, 250, 0.5));
+      }
+      50% {
+        filter: drop-shadow(0 0 30px rgba(167, 139, 250, 0.7));
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="demo-content">
+      <h1>VNU-HCM Footer</h1>
+      <p>This is a demo page showcasing the modern, premium footer component. Scroll down to see the footer with animated background, glassmorphic social buttons, and smooth hover effects.</p>
+    </div>
+  </main>
+
+  <footer class="vnu-footer" role="contentinfo" aria-label="Footer">
+    <div class="vnu-footer__bg-animation">
+      <div class="vnu-footer__bg-circle vnu-footer__bg-circle--1"></div>
+      <div class="vnu-footer__bg-circle vnu-footer__bg-circle--2"></div>
+      <div class="vnu-footer__bg-circle vnu-footer__bg-circle--3"></div>
+    </div>
+
+    <div class="vnu-footer__content">
+      <div class="vnu-footer__column vnu-footer__column--main">
+        <div class="vnu-footer__brand">
+          <h3 class="vnu-footer__logo">
+            <span class="vnu-footer__logo-icon">🎓</span>
+            VNU-HCM
+          </h3>
+          <div class="vnu-footer__logo-tagline">Excellence in Education</div>
+        </div>
+        <p class="vnu-footer__description">
+          Vietnam National University Ho Chi Minh City - A premier institution dedicated to 
+          excellence in education, cutting-edge research, and innovative technology transfer.
+        </p>
+        <div class="vnu-footer__socials">
+          <a href="https://facebook.com/vnuhcm" aria-label="Facebook" target="_blank" rel="noopener noreferrer" class="vnu-footer__social-link vnu-footer__social-link--facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://twitter.com/vnuhcm" aria-label="Twitter" target="_blank" rel="noopener noreferrer" class="vnu-footer__social-link vnu-footer__social-link--twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://youtube.com/@vnuhcm" aria-label="YouTube" target="_blank" rel="noopener noreferrer" class="vnu-footer__social-link vnu-footer__social-link--youtube">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a href="https://linkedin.com/school/vnuhcm" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" class="vnu-footer__social-link vnu-footer__social-link--linkedin">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://instagram.com/vnuhcm" aria-label="Instagram" target="_blank" rel="noopener noreferrer" class="vnu-footer__social-link vnu-footer__social-link--instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="vnu-footer__column vnu-footer__column--links">
+        <h4 class="vnu-footer__heading">Quick Links</h4>
+        <ul class="vnu-footer__link-list">
+          <li class="vnu-footer__link-item">
+            <a href="#" class="vnu-footer__link">
+              <i class="fas fa-users vnu-footer__link-icon"></i>
+              <span>About Us</span>
+            </a>
+          </li>
+          <li class="vnu-footer__link-item">
+            <a href="#" class="vnu-footer__link">
+              <i class="fas fa-graduation-cap vnu-footer__link-icon"></i>
+              <span>Academics</span>
+            </a>
+          </li>
+          <li class="vnu-footer__link-item">
+            <a href="#" class="vnu-footer__link">
+              <i class="fas fa-lightbulb vnu-footer__link-icon"></i>
+              <span>Research</span>
+            </a>
+          </li>
+          <li class="vnu-footer__link-item">
+            <a href="#" class="vnu-footer__link">
+              <i class="fas fa-book vnu-footer__link-icon"></i>
+              <span>Library</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="vnu-footer__column vnu-footer__column--contact">
+        <h4 class="vnu-footer__heading">Contact Us</h4>
+        <div class="vnu-footer__contact-list">
+          <div class="vnu-footer__contact-item">
+            <i class="fas fa-map-marker-alt vnu-footer__contact-icon"></i>
+            <div class="vnu-footer__contact-text">
+              <strong>Address:</strong><br>
+              Linh Trung Ward, Thu Duc City<br>
+              Ho Chi Minh City, Vietnam
+            </div>
+          </div>
+          <div class="vnu-footer__contact-item">
+            <i class="fas fa-phone vnu-footer__contact-icon"></i>
+            <div class="vnu-footer__contact-text">
+              <strong>Phone:</strong><br>
+              (84-28) 37242181
+            </div>
+          </div>
+          <div class="vnu-footer__contact-item">
+            <i class="fas fa-envelope vnu-footer__contact-icon"></i>
+            <div class="vnu-footer__contact-text">
+              <strong>Email:</strong><br>
+              info@vnuhcm.edu.vn
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="vnu-footer__bottom">
+      <div class="vnu-footer__bottom-content">
+        <p class="vnu-footer__copyright">
+          &copy; <span id="year"></span> Vietnam National University Ho Chi Minh City. All rights reserved.
+        </p>
+        <div class="vnu-footer__bottom-links">
+          <a href="#privacy">Privacy Policy</a>
+          <span class="vnu-footer__separator">•</span>
+          <a href="#terms">Terms of Service</a>
+          <span class="vnu-footer__separator">•</span>
+          <a href="#accessibility">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
