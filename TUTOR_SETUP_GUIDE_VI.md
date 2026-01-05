@@ -34,22 +34,31 @@ services:
 > **Lưu ý:** `/home/binhbb/frontend-component-footer-edx` là đường dẫn trên máy **HOST** (máy thật). `/openedx/footer` là đường dẫn trong **CONTAINER**.
 >
 > ⚠️ **Dành cho thành viên nhóm:** Nếu bạn setup trên máy của mình, bạn bắt buộc phải đổi `/home/binhbb` thành đường dẫn thư mục home của bạn (ví dụ: `/home/username`).
-> Để biết chính xác đường dẫn, mở terminal tại thư mục footer và gõ kệnh `pwd`.
 
 ### 2. Cấu hình Webpack Alias (module.config.js)
-Mỗi ứng dụng MFE cần được cấu hình để khi import `@edx/frontend-component-footer`, nó sẽ biết tìm trong `/openedx/footer` thay vì tìm trong `node_modules`.
+Mỗi ứng dụng MFE cần được cấu hình để khi import `@edx/frontend-component-footer`, nó sẽ biết tìm tại đâu.
+
+**QUAN TRỌNG:** Sử dụng đoạn code "Smart Check" dưới đây để đảm bảo code chạy tốt trên cả **Local Dev** (mount Docker) và tương thích an toàn với **Production** (npm install).
 
 **File:** `frontend-app-learning/module.config.js` (và các app tương tự)
 
 ```javascript
+const fs = require('fs');
+
+// Kiểm tra thông minh: 
+// Nếu folder /openedx/footer tồn tại (Đang chạy Local Docker Mount), thì dùng nó.
+// Nếu không (Đang Build Production), thì bỏ qua alias và dùng thư viện từ node_modules.
+const footerPath = '/openedx/footer';
+const useLocalFooter = fs.existsSync(footerPath);
+
 module.exports = {
-  localModules: [
+  localModules: useLocalFooter ? [
     {
       moduleName: '@edx/frontend-component-footer',
-      dir: '/openedx/footer', // 👈 Đọc từ đường dẫn đã mount trong Docker
-      dist: 'src',            // 👈 Sử dụng folder 'src' để hỗ trợ hot-reloading
+      dir: footerPath,
+      dist: 'src', 
     },
-  ],
+  ] : [],
 };
 ```
 
@@ -58,17 +67,25 @@ Component nên tự import file SCSS của chính nó trong file code gốc (ví
 
 Trong file `src/App.scss` của các MFE, hãy **XÓA** bất kỳ dòng import thủ công nào để tránh xung đột hoặc lỗi "File not found".
 
-```scss
-// ❌ XÓA DÒNG NÀY
-// @import "~@edx/frontend-component-footer/dist/_footer"; 
+---
 
-// ✅ NÊN LÀM
-// (Không làm gì cả. Để component tự lo style của nó.)
+## 📦 Triển khai Production (Deployment)
+Để code này hoạt động trên môi trường Production (nơi Docker không mount folder local), bạn bắt buộc phải thêm footer repo vào danh sách dependency.
+
+**File:** `package.json` (trong từng MFE)
+
+```json
+"dependencies": {
+  "@edx/frontend-component-footer": "git+https://github.com/TEN_ORG_CUA_BAN/frontend-component-footer-edx.git#main",
+  ...
+}
 ```
+
+Chạy lệnh `npm install` để cập nhật `package-lock.json`.
 
 ---
 
-## 🔄 Cách chạy
+## 🔄 Cách chạy (Local Dev)
 
 1. **Dừng session hiện tại:**
    ```bash

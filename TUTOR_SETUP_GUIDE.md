@@ -33,23 +33,32 @@ services:
 
 > **Note:** `/home/binhbb/frontend-component-footer-edx` is your HOST path. `/openedx/footer` is the CONTAINER path.
 >
-> ⚠️ **For Teammates:** If your partner is setting this up on their machine, they must change `/home/binhbb` to their own home directory path (e.g., `/home/username` or use `$(pwd)` if supported).
-> To verify your path, run `pwd` inside the footer folder terminal.
+> ⚠️ **For Teammates:** If your partner is setting this up on their machine, they must change `/home/binhbb` to their own home directory path (e.g., `/home/username`).
 
 ### 2. Configure Webpack Alias (module.config.js)
-Each MFE application needs to know that when it imports `@edx/frontend-component-footer`, it should look at `/openedx/footer` instead of `node_modules`.
+Each MFE application needs to know that when it imports `@edx/frontend-component-footer`, it should look at `/openedx/footer`.
+
+**IMPORTANT:** Use this "Smart Check" code to ensure it works for both **Local Dev** (Docker mount) and **Production** (npm install).
 
 **File:** `frontend-app-learning/module.config.js` (and other apps)
 
 ```javascript
+const fs = require('fs');
+
+// Smart Check: 
+// If /openedx/footer exists (Local Docker Mount), use it.
+// If not (Production Build), fall back to node_modules via npm install.
+const footerPath = '/openedx/footer';
+const useLocalFooter = fs.existsSync(footerPath);
+
 module.exports = {
-  localModules: [
+  localModules: useLocalFooter ? [
     {
       moduleName: '@edx/frontend-component-footer',
-      dir: '/openedx/footer', // 👈 Reads from the Docker mount point
-      dist: 'src',            // 👈 Uses the 'src' folder for hot-reloading
+      dir: footerPath,
+      dist: 'src', 
     },
-  ],
+  ] : [],
 };
 ```
 
@@ -58,17 +67,25 @@ The component should import its own SCSS in its entry file (e.g., `src/component
 
 In your MFE's `src/App.scss`, **REMOVE** any manual imports of the footer styles to avoid conflicts or "File not found" errors.
 
-```scss
-// ❌ DELETE THIS
-// @import "~@edx/frontend-component-footer/dist/_footer"; 
+---
 
-// ✅ DO THIS
-// (Nothing. Let the component import its own styles.)
+## 📦 Production Deployment
+For this to work in production (where Docker mounts usually stick to built images), you must add the footer repository as a dependency.
+
+**File:** `package.json` (in each MFE)
+
+```json
+"dependencies": {
+  "@edx/frontend-component-footer": "git+https://github.com/YOUR_ORG/frontend-component-footer-edx.git#main",
+  ...
+}
 ```
+
+Run `npm install` to update `package-lock.json`.
 
 ---
 
-## 🔄 How to Run
+## 🔄 How to Run (Local Dev)
 
 1. **Stop the current session:**
    ```bash
